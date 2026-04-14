@@ -1,0 +1,2 @@
+##### Elastic IP - IP Estática en AWS
+###### Network & Security -> Allocate Elastic IP address (Direcciones IP elásticas) -> Asignar direccion elastica -> Dirección IP elástica asociada y asociarla a tu instancia EC2 -> Asociar
