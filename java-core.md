@@ -1,6 +1,6 @@
 ---
 created: 2026-05-20T14:18:58-05:00
-modified: 2026-05-20T14:27:53-05:00
+modified: 2026-05-20T14:28:57-05:00
 ---
 
 # Java core
@@ -9,4 +9,4 @@ modified: 2026-05-20T14:27:53-05:00
 #### OOP / POO
 
 ### Herencia
-    Heredar propiedades y metodos CLASE PADRE -> CLASE HIJA
+1. Heredar propiedades y metodos CLASE PADRE -> CLASE HIJA
