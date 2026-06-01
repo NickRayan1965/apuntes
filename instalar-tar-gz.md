@@ -22,6 +22,7 @@ Name=AnyDesk Portable
 Exec=/home/nick/Descargas/anydesk-8.0.2/anydesk
 Icon=/home/nick/Descargas/anydesk-8.0.2/icons/hicolor/32x32/apps/anydesk.pnp
 Type=Application
+StartupWMClass=jetbrains-studio # Es para que el icono del menu al ser abierto coincida con el del escritorio, obtenemos este nombre ejecutando `xprop WM_CLASS` y haciendo click en la ventana del app
 Terminal=false
 ```
 Permisos y refrescar
@@ -29,6 +30,7 @@ Permisos y refrescar
 chmod +x ~/.local/share/applications/anydesk.desktop
 update-desktop-database ~/.local/share/applications
 ```
+
 
 
 ##### Notas
