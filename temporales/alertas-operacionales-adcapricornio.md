@@ -44,6 +44,12 @@ Adicionalmente, la solución incorporará un módulo administrativo que permitir
 
 Como parte de la evolución de la plataforma, también se contempla la generación de métricas e indicadores operacionales. Gracias a la centralización de eventos y al seguimiento del ciclo de vida de las alertas, será posible obtener información relacionada con tiempos de atención, volumen de incidencias, cumplimiento de procesos y otros indicadores relevantes para la toma de decisiones.
 
-La implementación inicial se realizará mediante un entorno sandbox que simulará las condiciones reales de operación. El primer módulo integrado será el CRM corporativo, permitiendo validar el funcionamiento de la solución antes de extender progresivamente la integración hacia otros procesos de la organización.
+La implementación inicial se realizará mediante un entorno sandbox que simulará las condiciones reales de operación. Se usará el módulo CRM como plan piloto para mostrar la solución a traves de un proceso completo simulado(no necesariamente real y exacto al existente), permitiendo validar el funcionamiento de la solución antes de extender progresivamente la integración hacia otros procesos de la organización.
 
 Con esta propuesta se busca reducir significativamente la carga generada sobre la base de datos, centralizar la gestión de alertas, mejorar la experiencia de los usuarios mediante información en tiempo real, facilitar la evolución tecnológica de la organización y establecer una base sólida para futuras iniciativas de monitoreo y gestión de procesos operacionales.
+
+Soy Estudiante de la carrera Técnica de Desarrollo de Sistemas de Información en el instituto IDAT en Perú, actualmente me encuentro en el último ciclo de la carrera. Y estoy haciendo un TAP, Trabajo de Aplicación Profesional dando esta solución a la problemática que se ha identificado en la empresa donde me encuentro trabajando.
+
+El contexto servira para el Curso de Proyecto Integrador 2 y proyecto Integrador 3, el primero se hara en metodologia RUP y el segundo se hara en metodologia SCRUM, ambos con la misma problemática y solucion propuesta.
+
+El ciclo completo durará 4 meses, iniciando en el mes de mayo día 11 y finalizando el 11 de septiembre del 2026. Durante este periodo se llevarán a cabo las distintas fases del proyecto, desde la planificación y análisis inicial, pasando por el diseño, desarrollo, pruebas e implementación de la solución propuesta. El objetivo es entregar una plataforma robusta y eficiente que permita mejorar significativamente la gestión de alertas operacionales dentro de la Agencia de Aduanas Capricornio S.A., contribuyendo así al éxito y crecimiento continuo de la organización.
