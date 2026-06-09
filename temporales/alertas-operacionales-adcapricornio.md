@@ -53,3 +53,13 @@ Soy Estudiante de la carrera Técnica de Desarrollo de Sistemas de Información 
 El contexto servira para el Curso de Proyecto Integrador 2 y proyecto Integrador 3, el primero se hara en metodologia RUP y el segundo se hara en metodologia SCRUM, ambos con la misma problemática y solucion propuesta.
 
 El ciclo completo durará 4 meses, iniciando en el mes de mayo día 11 y finalizando el 11 de septiembre del 2026. Durante este periodo se llevarán a cabo las distintas fases del proyecto, desde la planificación y análisis inicial, pasando por el diseño, desarrollo, pruebas e implementación de la solución propuesta. El objetivo es entregar una plataforma robusta y eficiente que permita mejorar significativamente la gestión de alertas operacionales dentro de la Agencia de Aduanas Capricornio S.A., contribuyendo así al éxito y crecimiento continuo de la organización.
+
+## Arquitectura y Contexto Técnico de Integración
+
+El proyecto implementa el patrón Strangler Fig para desacoplar el módulo de alertas de los sistemas legados (CapriNet y CapriNet 2.0), eliminando la degradación de rendimiento en la base de datos principal mediante las siguientes especificaciones:
+
+Capa de Persistencia (Heredada): Se utiliza una base de datos independiente en MySQL 8 operando bajo el motor MyISAM (mantenido por compatibilidad y arrastre con la infraestructura preexistente de la empresa). Al no requerir lógica transaccional compleja para las alertas, este motor ofrece una lectura masiva de alta velocidad con un consumo mínimo de CPU.
+
+Ingesta de Eventos (API REST): Toda la comunicación y envío de alertas desde los diferentes componentes del ecosistema (el monolito PHP en CodeIgniter/Slim, los daemons en Python y el Sandbox del CRM) hacia el backend de Java Spring Boot se realiza de forma estandarizada mediante peticiones a una API REST compartida emitiendo payloads en formato JSON.
+
+Tiempo Real y Frontend: El procesamiento centralizado distribuye las notificaciones instantáneamente a una SPA en Angular a través de WebSockets, permitiendo que la interfaz embebida (vía iframe en la plataforma PHP actual) muestre eventos en tiempo real sin necesidad de recargas de pantalla ni consultas cíclicas a la base de datos
