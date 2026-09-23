@@ -58,3 +58,5 @@ Permisos básicos:
   * r (4) → read
   * w (2) → write
   * x (1) → execute
+
+sudo mv carpeta_extraida /opt/nombre_de_tu_app
