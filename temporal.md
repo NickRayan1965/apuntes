@@ -1,9 +1,9 @@
 ## Puntos a Trabajar o Estudiar
-1. Validación de payloads (`spring-boot-starter-validation` y `@Valid`).
-2. Documentación OpenAPI / Swagger (`springdoc-openapi`).
+1. Validación de payloads (`spring-boot-starter-validation` y `@Valid`). ✅
+2. Documentación OpenAPI / Swagger (`springdoc-openapi`). ✅
 3. Métricas y cobertura para Sonar (`jacoco-maven-plugin`).
-4. Operaciones insert por lote (`batchUpdate` con `NamedParameterJdbcTemplate` o batching JPA).
-5. Centralizar configuración de CORS en `CorsConfig` (eliminar `@CrossOrigin` con wildcard `*`).
+4. Operaciones insert por lote (`batchUpdate` con `NamedParameterJdbcTemplate` o batching JPA).✅
+5. Centralizar configuración de CORS en `CorsConfig` (eliminar `@CrossOrigin` con wildcard `*`).✅
 6. Configurar Timeouts (`connectTimeout`, `readTimeout`), `ErrorDecoder` y/o tolerancia a fallos con Resilience4j en clientes Feign.
 7. Dominar estándares JPA/Hibernate (`JpaRepository`, JPQL, `@Procedure`) y `SimpleJdbcCall` como alternativa idiomática a JDBC puro.
 8. Pruebas unitarias de controladores con `@WebMvcTest` y `MockMvc`.

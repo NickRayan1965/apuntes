@@ -387,6 +387,64 @@ public class JwtRequestFilter extends OncePerRequestFilter {
       }
   }
   ```
+  ### 2.8 Cross Origin
+  CorsConfig.class en infrastructure/config.
+  Tenemos que pasarle despues CorsConfigurationSource al SecurityFilterChain manualmente o con Customizer.withDefaults()
+  ```java
+    package com.adcapricornio.operational_alerts.infrastructure.config;
+    import java.util.List;
+
+    import org.springframework.context.annotation.Bean;
+    import org.springframework.context.annotation.Configuration;
+    import org.springframework.web.cors.CorsConfiguration;
+    import org.springframework.web.cors.CorsConfigurationSource;
+    import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+
+    @Configuration
+    public class CorsConfig {
+
+        @Bean
+        public CorsConfigurationSource corsConfigurationSource() {
+            CorsConfiguration config = new CorsConfiguration();
+            // 1. Orígenes permitidos (definir explícitamente, nunca usar '*' si hay credenciales)
+            config.setAllowedOrigins(List.of(
+                "http://localhost:4200", 
+                "http://localhost:3000"
+            ));
+
+            // 2. Verbos HTTP permitidos
+            config.setAllowedMethods(List.of("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"));
+
+            // 3. Headers aceptados en requests entrantes
+            config.setAllowedHeaders(List.of(
+                "Authorization", 
+                "Content-Type", 
+                "X-Requested-With", 
+                "Accept", 
+                "Origin"
+            ));
+
+            // 4. Headers expuestos al frontend (ej. tokens o nombres de archivos descargados)
+            config.setExposedHeaders(List.of("Authorization", "Content-Disposition"));
+
+            // 5. Permitir envío de cookies/tokens en peticiones cruzadas
+            config.setAllowCredentials(true);
+
+            // 6. Cache del resultado del Preflight (OPTIONS) por 1 hora
+            config.setMaxAge(3600L);
+            
+            UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+            source.registerCorsConfiguration("/**", config);
+            return source;
+        }
+    }
+  ```
+  Bean SecurityFilterChain
+  ```java
+  http
+        .cors(Customizer.withDefaults())
+        //..cors(cors -> cors.configurationSource(corsConfigurationSource)) opcion 2
+  ```
 
 #### Notas
 #### ApiError class
