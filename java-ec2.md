@@ -149,4 +149,4 @@ Que tu API de Spring Boot se inicie sola al encender el servidor y se reinicie s
   * Usa After para dependencias técnicas (Red, Base de Datos local, Sistema de archivos).
 
   * Usa WantedBy para decirle a Linux: "Oye, cada vez que el servidor se prenda de forma normal (modo multi-usuario), mi API debe estar prendida". Usa Targets que son agrupaciones de servicios. multi-user.target es el más común para servidores sin interfaz gráfica. Incluye Sistema con red, múltiples usuarios, pero sin interfaz gráfica.
-  graphical.target incluye lo mismo que multi-user.target pero también arranca el entorno gráfico (X11, GDM, etc). 
+  graphical.target incluye lo mismo que multi-user.target pero también arranca el entorno gráfico (X11, GDM, etc). 10
